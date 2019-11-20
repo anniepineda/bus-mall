@@ -1,0 +1,26 @@
+body{
+    background-color: whitesmoke;
+    color: lightslategrey;
+}
+
+h1{
+    margin-left: 20px;
+    font-family: 'Playfair Display', serif;
+        
+}
+
+h3{
+    margin-left: 35px;
+    font-family: 'Playfair Display', serif;
+}
+
+h2{
+    margin-top: 100px;
+    font-family: 'Playfair Display', serif;
+}
+
+hr.style-two {
+    border: 0;
+    height: 2px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
