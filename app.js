@@ -52,14 +52,38 @@ Function shuffle(array){
     for (let i = array.lenght - 1; i>0; i--){
         let j = Math.floor(Math.random() * (i + 1)); 
         [array [i], array [j]] = [array[j], array[i]];
+
+        [array[i], array[j]] = [array[j], array[i]];
     }
 }
+
+function handleClikcOnImages(event){
+    if(event.target.tagName !== 'IMG'){}
+}
+
+console.log('clicked on a goat');
+
+likeCounter++;
+
+
+if(event.target.id == 'left_image_img'){
+    leftImageThatIsOnThePage.clicks++;
+}
+
+leftImageThatIsOnThePage = Image.getSafeRandom(previouslyPickedImages);
+previouslyPickedImages.push(leftImageOnThePage);
+middleImageThatIsOnThePage = Image.getSafeRandom(previouslyPickedImages);
+previouslyPickedImages.push(middleImageThatIsOnThePage);
+righImageThatIsOnThePage = Image.getSafeRandom(prevousUsedImages);
+previouslyPickedImages = [leftImageOnThePage, middleImageThatIsOnThePage, righImageThatIsOnThePage]
 // function Images(name, imgUrl) {
 //     this.name = name;
 //     this.imgUrl = imgUrl;
 //     this.clickCtr = 0;
 //     this.shownCtr = 0;
 // }
+
+
 
 // Images.voteCtr = 0;
 // Image.voteMax = 26;
@@ -70,3 +94,24 @@ Function shuffle(array){
 
 // var bag = new Image('bag', 'images/bag.jpg');
 // var banana = new Image('banana', 'images/banana.jpg');
+
+
+//////////JSON////////////////
+        //belongs inside event handler at the end//
+
+var storingData = function(){
+    var getVotes;
+    if (count ===25){
+        JSON.stringify(Images.all) //not sure if Images.all will work in the ()
+        localStorage.setItem('Images.all',JSON.stringify(Images.all));
+        getVotes = JSON.parse(localStorage.getItem(Images.all));
+    }
+    return getVotes;
+}
+
+storingData();
+
+//} 
+
+
+
